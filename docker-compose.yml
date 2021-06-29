@@ -6,7 +6,7 @@ services:
 
   db:
     image: mariadb:latest
-    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    command: docker-compose up
     #    restart: always # Automatic start on boot
     environment:
       - MYSQL_ROOT_PASSWORD=example
