@@ -29,7 +29,6 @@ public class HouseHold {
     @Id
     @ApiModelProperty(accessMode = ApiModelProperty.AccessMode.READ_ONLY)
     // Swagger nebude zobrazovať atribút
-    @ApiModelProperty(hidden = true) // Swagger nebude zobrazovať atribút
     private Long id;
     @NotEmpty
     @ApiModelProperty(example = "Univerzitná") // Príklad pre swagger doku.
