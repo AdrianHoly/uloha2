@@ -7,6 +7,8 @@ import javax.persistence.*;
 @org.hibernate.annotations.NamedQueries({
         @org.hibernate.annotations.NamedQuery(name = "IotNode_findAll",
                 query = "from IotNode"),
+        @org.hibernate.annotations.NamedQuery(name = "IotNode_findByHouseHold",
+                query = "from IotNode where houseHoldId = :houseHoldId"),
 
 })
 
