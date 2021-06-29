@@ -1,11 +1,27 @@
 package sk.fri.uniza.model;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
+import org.hibernate.validator.constraints.NotEmpty;
 import javax.persistence.*;
 
-public class IotNode {
+@org.hibernate.annotations.NamedQueries({
+        @org.hibernate.annotations.NamedQuery(name = "IotNode_findAll",
+                query = "from IotNode"),
 
+})
+
+@Entity
+public class IotNode {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @ApiModelProperty(accessMode = ApiModelProperty.AccessMode.READ_ONLY)
     private Long id;
+    @NotEmpty
+    @ApiModelProperty(example = "Ado") // Príklad pre swagger doku.
     private String Name;
+    @NotEmpty
+    @ApiModelProperty(example = "dom") // Príklad pre swagger doku.
+    @ManyToOne
     private HouseHold houseHold;
 
     public Long getId() {
